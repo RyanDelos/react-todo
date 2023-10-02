@@ -18,7 +18,7 @@ const todoList = [
 function App() {
   return (
     <div>
-      <h1 className="heading">Todo List</h1>
+      <h1>Todo List</h1>
       <ul>
         {todoList.map(function (item) {
           return <li key={item.objectID}>{item.title}</li>;
