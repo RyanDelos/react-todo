@@ -11,12 +11,10 @@ const AddTodoForm = ({ onAddTodo }) => {
   const handleAddTodo = (event) => {
     event.preventDefault();
 
-    const dataObject = {
+    onAddTodo({
       title: todoTitle,
       id: Date.now(),
-    };
-    onAddTodo(dataObject.title, dataObject.id);
-
+    });
     setTodoTitle('');
   };
 
