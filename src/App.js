@@ -6,7 +6,6 @@ const useSemiPersistentState = () => {
   const [todoList, setTodoList] = useState(
     JSON.parse(localStorage.getItem('savedTodoList')) || []
   );
-  // const todoListJSON = JSON.parse(todoList);
 
   React.useEffect(() => {
     localStorage.setItem('savedTodoList', JSON.stringify(todoList));
@@ -16,7 +15,6 @@ const useSemiPersistentState = () => {
 };
 
 const App = () => {
-  // const [setNewTodo] = useState('');
   const [todoList, setTodoList] = useSemiPersistentState();
 
   const addTodo = (newTodo) => {
@@ -24,7 +22,6 @@ const App = () => {
     console.log(todoList);
   };
 
-  // console.log(`todoList variable type: ${typeof JSON.parse(todoList)}`);
   return (
     <>
       <h1>Todo List</h1>
