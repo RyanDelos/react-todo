@@ -12,7 +12,7 @@ const App = () => {
     const options = {
       method: 'GET',
       headers: {
-        Authorization: `Bearer${process.env.REACT_APP_AIRTABLE_API_TOKEN}}`,
+        Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_API_TOKEN}`,
       },
     };
     try {
@@ -25,6 +25,12 @@ const App = () => {
 
       const todoFromAPI = await response.json();
       console.log('todoFromAPI:', todoFromAPI);
+
+      const todos = todoFromAPI.records.map((todo) => {
+        console.log('todo:', todo);
+      });
+
+      console.log('todos:', todos);
     } catch (error) {
       console.log(error.message);
     }
