@@ -24,34 +24,23 @@ const App = () => {
       }
 
       const todoFromAPI = await response.json();
-      console.log('todoFromAPI:', todoFromAPI);
 
       const todos = todoFromAPI.records.map((todo) => {
-        console.log('todo:', todo);
+        const todoItem = {
+          id: todo.id,
+          title: todo.fields.title,
+        };
+        return todoItem;
       });
-
-      console.log('todos:', todos);
+      setTodoList(todos);
+      setIsLoading(false);
     } catch (error) {
-      console.log(error.message);
+      console.log('Error Message:', error.message);
     }
   };
 
   useEffect(() => {
     fetchData();
-    // new Promise((resolve) =>
-    //   setTimeout(
-    //     () =>
-    //       resolve({
-    //         data: {
-    //           todoList: JSON.parse(localStorage.getItem('savedTodoList')),
-    //         },
-    //       }),
-    //     2000
-    //   )
-    // ).then((result) => {
-    //   setTodoList(result.data.todoList);
-    //   setIsLoading(false);
-    // });
   }, []);
 
   useEffect(() => {
