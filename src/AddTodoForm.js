@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import InputWithLabel from './InputWithLabel';
+import style from './TodoListItem.module.css';
+import { ReactComponent as Check } from './icons/AddIcon.svg';
 
 const AddTodoForm = ({ onAddTodo }) => {
   const [todoTitle, setTodoTitle] = useState('');
@@ -20,12 +22,18 @@ const AddTodoForm = ({ onAddTodo }) => {
   };
 
   return (
-    <form onSubmit={handleAddTodo}>
-      <InputWithLabel value={todoTitle} onChange={handleTitleChange}>
-        <strong>Title: </strong>
-      </InputWithLabel>
-      <button type="submit">Add</button>
-    </form>
+    <div className={style.FormContainer}>
+      <form className={style.Form} onSubmit={handleAddTodo}>
+        <strong> Task: </strong>
+        <InputWithLabel
+          value={todoTitle}
+          onChange={handleTitleChange}
+        ></InputWithLabel>
+        <button className={style.BtnAdd} type="submit">
+          <Check height="24px" width="24px" />
+        </button>
+      </form>
+    </div>
   );
 };
 

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import AddTodoForm from './AddTodoForm';
 import TodoList from './TodoList';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import style from './TodoListItem.module.css';
 
 const BASE_URL = 'https://api.airtable.com/v0';
 const apiUrl = `${BASE_URL}/${process.env.REACT_APP_AIRTABLE_BASE_ID}/${process.env.REACT_APP_TABLE_NAME}`;
@@ -66,15 +67,16 @@ const App = () => {
           path={'/'}
           element={
             <>
-              <h1>Todo List</h1>
+              <h1 className={style.ToDoListTitle}>Todo List</h1>
               <hr />
-              <AddTodoForm onAddTodo={addTodo} />
-              {isLoading ? (
-                <p>Loading...</p>
-              ) : (
-                <TodoList todoList={todoList} onRemoveTodo={removeTodo} />
-              )}
-              <hr />
+              <div className={style.Content}>
+                <AddTodoForm onAddTodo={addTodo} />
+                {isLoading ? (
+                  <p>Loading...</p>
+                ) : (
+                  <TodoList todoList={todoList} onRemoveTodo={removeTodo} />
+                )}
+              </div>
             </>
           }
         />
