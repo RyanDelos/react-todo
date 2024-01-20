@@ -60,6 +60,17 @@ const App = () => {
     setTodoList((todoList) => todoList.filter((item) => item.id !== id));
   };
 
+  const setUpdate = (updatedTitle, id) => {
+    setTodoList(
+      todoList.map((todo) => {
+        if (todo.id === id) {
+          todo.title = updatedTitle;
+        }
+        return todo;
+      })
+    );
+  };
+
   return (
     <BrowserRouter>
       <Routes>
@@ -74,7 +85,11 @@ const App = () => {
                 {isLoading ? (
                   <p>Loading...</p>
                 ) : (
-                  <TodoList todoList={todoList} onRemoveTodo={removeTodo} />
+                  <TodoList
+                    todoList={todoList}
+                    onRemoveTodo={removeTodo}
+                    setUpdate={setUpdate}
+                  />
                 )}
               </div>
             </>

@@ -24,7 +24,6 @@ const AddTodoForm = ({ onAddTodo }) => {
   return (
     <div className={style.FormContainer}>
       <form className={style.Form} onSubmit={handleAddTodo}>
-        <strong> Task: </strong>
         <InputWithLabel
           value={todoTitle}
           onChange={handleTitleChange}

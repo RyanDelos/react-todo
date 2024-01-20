@@ -17,6 +17,7 @@ const InputWithLabel = ({ children, value, onChange }) => {
         onChange={onChange}
         ref={inputRef}
         value={value}
+        placeholder={`What is the task?`}
       ></input>
     </>
   );
