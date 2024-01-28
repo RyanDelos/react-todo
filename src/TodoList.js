@@ -7,7 +7,6 @@ const TodoList = ({ todoList, onRemoveTodo, setUpdate }) => {
     <div className={style.ListContainer}>
       <ul>
         {todoList.map((item) => {
-          // console.log('TodoList setUpdate: ', setUpdate);
           return (
             <TodoListItem
               key={item.id}

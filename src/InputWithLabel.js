@@ -12,7 +12,7 @@ const InputWithLabel = ({ children, value, onChange }) => {
       <label htmlFor="todoTitle">{children}</label>
       <input
         id="todoTitle"
-        className={style.Input}
+        className={style.input}
         name="title"
         onChange={onChange}
         ref={inputRef}

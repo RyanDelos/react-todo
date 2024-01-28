@@ -1,6 +1,7 @@
 import { React, useState } from 'react';
 import style from './TodoListItem.module.css';
-import { ReactComponent as Trash } from './icons/delete.svg';
+import { ReactComponent as Trash } from './icons/deleteIcon.svg';
+import { ReactComponent as Edit } from './icons/editIcon.svg';
 
 const TodoListItem = ({ item, onRemoveTodo, setUpdate }) => {
   const [updateInput, setUpdateInput] = useState(item.title);
@@ -25,11 +26,13 @@ const TodoListItem = ({ item, onRemoveTodo, setUpdate }) => {
   };
 
   return (
-    <li className={style.ListItem}>
-      <div className={style.ListRow}>
+    <li className={style.listItem}>
+      <div className={style.listRow}>
         {item.title}
         <div className={style.content} style={viewMode}>
-          <button onClick={handleEditing}>Edit</button>
+          <button className={style.BtnEdit} onClick={handleEditing}>
+            <Edit />
+          </button>
           <button
             className={style.BtnRemove}
             type="button"
@@ -37,7 +40,7 @@ const TodoListItem = ({ item, onRemoveTodo, setUpdate }) => {
               onRemoveTodo(item.id);
             }}
           >
-            <Trash height="16px" width="16px" />
+            <Trash />
           </button>
         </div>
       </div>
@@ -47,10 +50,6 @@ const TodoListItem = ({ item, onRemoveTodo, setUpdate }) => {
         className={style.textInput}
         style={editMode}
         onChange={(e) => {
-          console.log('e:', e);
-          console.log('setUpdateInput:', setUpdateInput);
-          console.log('item.id:', item.id);
-          console.log('target value: ', e.target.value);
           setUpdateInput(e.target.value);
         }}
         onKeyDown={handleUpdatedDone}

@@ -37,7 +37,9 @@ body {
   font-size: 2.5rem;
   display: flex;
   justify-content: center;
-  margin: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  background-color: var(--grey-shade);
+  color: var(--off-white);
 }
 
 /* Content */
@@ -49,13 +51,13 @@ body {
   margin-top: var(--spacing-md);
 }
 
-.Form {
+.form {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-.Input {
+.input {
   padding: 1rem;
   width: 100%;
   margin: var(--spacing-xs) 0;
@@ -65,25 +67,41 @@ body {
 }
 
 .BtnAdd,
-.BtnRemove {
+.BtnRemove,
+.BtnEdit {
   background-color: transparent;
   border: none;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   cursor: pointer;
+  padding: 0.5rem;
+  transition: 0.5s;
+}
+
+.BtnAdd:hover,
+.BtnRemove:hover,
+.BtnEdit:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  background-color: var(--aqua-tint);
+  border-radius: 50%;
+}
+
+.BtnEdit {
+  margin-right: 1rem;
 }
 
 /* List */
 
-.ListItem {
+.listItem {
   color: var(--grey);
   border-bottom: solid black;
   list-style: none;
   margin-bottom: 1rem;
 }
 
-.ListRow {
+.listRow {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -120,9 +138,9 @@ body {
 
 @media (min-width: 50rem) {
   .FormContainer {
-    width: 40%;
+    width: 50%;
   }
   .ListContainer {
-    width: 35%;
+    width: 40%;
   }
 }

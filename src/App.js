@@ -5,7 +5,10 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import style from './TodoListItem.module.css';
 
 const BASE_URL = 'https://api.airtable.com/v0';
-const apiUrl = `${BASE_URL}/${process.env.REACT_APP_AIRTABLE_BASE_ID}/${process.env.REACT_APP_TABLE_NAME}`;
+const BASE_ID = process.env.REACT_APP_AIRTABLE_BASE_ID;
+const TABLE_NAME = process.env.REACT_APP_TABLE_NAME;
+
+const apiUrl = `${BASE_URL}/${BASE_ID}/${TABLE_NAME}`;
 
 const App = () => {
   const [todoList, setTodoList] = useState([]);
@@ -79,7 +82,6 @@ const App = () => {
           element={
             <>
               <h1 className={style.ToDoListTitle}>Todo List</h1>
-              <hr />
               <div className={style.Content}>
                 <AddTodoForm onAddTodo={addTodo} />
                 {isLoading ? (
