@@ -1,7 +1,8 @@
 import { React, useState } from 'react';
 import style from './TodoListItem.module.css';
-import { ReactComponent as Trash } from './icons/deleteIcon.svg';
-import { ReactComponent as Edit } from './icons/editIcon.svg';
+import { ReactComponent as Trash } from '../icons/deleteIcon.svg';
+import { ReactComponent as Edit } from '../icons/editIcon.svg';
+import PropTypes from 'prop-types';
 
 const TodoListItem = ({ item, onRemoveTodo, setUpdate }) => {
   const [updateInput, setUpdateInput] = useState(item.title);
@@ -56,6 +57,15 @@ const TodoListItem = ({ item, onRemoveTodo, setUpdate }) => {
       />
     </li>
   );
+};
+
+TodoListItem.propTypes = {
+  item: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  }).isRequired,
+  onRemoveClicked: PropTypes.func.isRequired,
+  setUpdate: PropTypes.func,
 };
 
 export default TodoListItem;

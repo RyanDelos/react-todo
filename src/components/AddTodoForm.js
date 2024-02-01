@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import InputWithLabel from './InputWithLabel';
 import style from './TodoListItem.module.css';
-import { ReactComponent as Check } from './icons/addIcon.svg';
+import { ReactComponent as Add } from '../icons/addIcon.svg';
+import PropTypes from 'prop-types';
 
+const titleId = 'todoTitle';
 const AddTodoForm = ({ onAddTodo }) => {
   const [todoTitle, setTodoTitle] = useState('');
 
@@ -27,13 +29,18 @@ const AddTodoForm = ({ onAddTodo }) => {
         <InputWithLabel
           value={todoTitle}
           onChange={handleTitleChange}
+          inputId={titleId}
         ></InputWithLabel>
         <button className={style.BtnAdd} type="submit">
-          <Check />
+          <Add />
         </button>
       </form>
     </div>
   );
+};
+
+AddTodoForm.propTypes = {
+  onAddTodo: PropTypes.func.isRequired,
 };
 
 export default AddTodoForm;
