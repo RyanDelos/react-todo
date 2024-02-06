@@ -10,6 +10,8 @@ const BASE_URL = 'https://api.airtable.com/v0';
 const BASE_ID = process.env.REACT_APP_AIRTABLE_BASE_ID;
 const TABLE_NAME = process.env.REACT_APP_TABLE_NAME;
 const GRID_VIEW = 'view=Grid%20view';
+
+// sorting asc order in airtable
 const SORT_ASC = '&sort[0][field]=title&sort[0][direction]=asc';
 
 const apiUrl = `${BASE_URL}/${BASE_ID}/${TABLE_NAME}?${GRID_VIEW}`;
@@ -41,13 +43,26 @@ const App = () => {
         const titleB = objectB.fields.title.toLowerCase();
 
         if (titleA < titleB) {
-          return 1;
+          return -1;
         }
         if (titleA > titleB) {
-          return -1;
+          return 1;
         }
         return 0;
       });
+
+      // const reverseSort = todoFromAPI.records.sort((objectA, objectB) => {
+      //   const titleA = objectA.fields.title.toLowerCase();
+      //   const titleB = objectB.fields.title.toLowerCase();
+
+      //   if (titleA < titleB) {
+      //     return 1;
+      //   }
+      //   if (titleA > titleB) {
+      //     return -1;
+      //   }
+      //   return 0;
+      // });
 
       const todos = todoFromAPI.records.map((todo) => {
         const todoItem = {
