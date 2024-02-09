@@ -1,0 +1,96 @@
+/* css root */
+:root {
+  --aqua: #92c7cf;
+  --aqua-tint: #f5f9fa;
+  --grey: #454341;
+  --grey-shade: #373634;
+  --off-white: #fbf9f1;
+  --pink: #f02eaa;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 2.5rem;
+}
+
+.homePageContainer {
+  background: var(--off-white);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  padding: 1.5rem 2rem;
+  margin: auto;
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 15px 15px,
+    rgba(240, 46, 170, 0.2) 20px 20px, rgba(240, 46, 170, 0.1) 25px 25px,
+    rgba(240, 46, 170, 0.05) 30px 30px;
+}
+
+.homePageButton {
+  align-items: center;
+  background-color: var(--aqua);
+  border: 2px solid var(--grey-shade);
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: var(--grey-shade);
+  cursor: pointer;
+  display: flex;
+  font-family: Inter, sans-serif;
+  font-size: 1rem;
+  height: 3rem;
+  justify-content: center;
+  line-height: 1.5rem;
+  max-width: 100%;
+  padding: 0 1.5rem;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.homePageButton:after {
+  background-color: var(--grey-shade);
+  border-radius: 8px;
+  content: '';
+  display: block;
+  height: 48px;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: -2px;
+  transform: translate(8px, 8px);
+  transition: transform 0.2s ease-out;
+  z-index: -1;
+}
+
+.homePageButton:hover:after {
+  transform: translate(0, 0);
+}
+
+.homePageButton:active {
+  background-color: var(--pink);
+  outline: 0;
+}
+
+.homePageButton:hover {
+  outline: 0;
+}
+
+.homePageLink {
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--grey-shade);
+}
+
+.homePageLink:active {
+  color: var(--off-white);
+}

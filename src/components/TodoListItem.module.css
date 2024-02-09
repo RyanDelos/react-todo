@@ -1,3 +1,4 @@
+/* css root */
 :root {
   --aqua: #92c7cf;
   --aqua-tint: #f5f9fa;
@@ -30,6 +31,8 @@ body {
   background: linear-gradient(to right, var(--aqua-tint), var(--aqua));
   color: var(--grey-shade);
   font-family: 'Open Sans', sans-serif;
+  height: 100vh;
+  position: relative;
 }
 
 /* Heading */

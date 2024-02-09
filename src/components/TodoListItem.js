@@ -64,7 +64,7 @@ TodoListItem.propTypes = {
     id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
   }).isRequired,
-  onRemoveClicked: PropTypes.func.isRequired,
+  onRemoveClicked: PropTypes.func,
   setUpdate: PropTypes.func,
 };
 
