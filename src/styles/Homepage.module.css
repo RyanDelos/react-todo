@@ -23,7 +23,7 @@
   gap: var(--spacing-md);
   padding: 1.5rem 2rem;
   margin: auto;
-  width: 50%;
+  width: 75%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -31,6 +31,7 @@
   box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 15px 15px,
     rgba(240, 46, 170, 0.2) 20px 20px, rgba(240, 46, 170, 0.1) 25px 25px,
     rgba(240, 46, 170, 0.05) 30px 30px;
+  text-align: center;
 }
 
 .homePageButton {
@@ -93,4 +94,41 @@
 
 .homePageLink:active {
   color: var(--off-white);
+}
+
+.socialBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Media Queries */
+
+@media (max-width: 22rem) {
+  .homePageButton {
+    font-size: 0.75rem;
+  }
+
+  .homePageHeading {
+    font-size: 1.75rem;
+  }
+
+  .homePageParagraph {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 32rem) {
+  .homePageContainer {
+    padding: 2rem 0.5rem;
+  }
+
+  .homePageButton {
+    font-size: 0.75rem;
+  }
+
+  .homePageParagraph {
+    font-size: 0.75rem;
+  }
 }

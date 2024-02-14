@@ -1,5 +1,5 @@
 import { React, useState } from 'react';
-import style from './TodoListItem.module.css';
+import style from '../styles/Application.module.css';
 import { ReactComponent as Trash } from '../icons/deleteIcon.svg';
 import { ReactComponent as Edit } from '../icons/editIcon.svg';
 import PropTypes from 'prop-types';

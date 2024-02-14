@@ -5,7 +5,7 @@ const Loading = () => {
   return (
     <div className={style.ring}>
       Loading
-      <span></span>
+      <span className={style.spanRing}></span>
     </div>
   );
 };

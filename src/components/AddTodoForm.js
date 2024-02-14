@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import InputWithLabel from './InputWithLabel';
-import style from './TodoListItem.module.css';
+import Sort from '../components/Sort';
+import style from '../styles/Application.module.css';
 import { ReactComponent as Add } from '../icons/addIcon.svg';
 import PropTypes from 'prop-types';
 
 const titleId = 'todoTitle';
-const AddTodoForm = ({ onAddTodo }) => {
+const AddTodoForm = ({ onAddTodo, onSortTodo }) => {
   const [todoTitle, setTodoTitle] = useState('');
 
   const handleTitleChange = (event) => {
@@ -37,6 +38,7 @@ const AddTodoForm = ({ onAddTodo }) => {
         <button className={style.BtnAdd} type="submit">
           <Add />
         </button>
+        <Sort onSortTodo={onSortTodo} />
       </form>
     </div>
   );
